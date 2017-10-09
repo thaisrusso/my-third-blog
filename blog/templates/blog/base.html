@@ -1,14 +1,15 @@
 {% load staticfiles %}
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Roboto" rel="stylesheet">
 		<link rel="stylesheet" href="{%static 'css/blog.css' %}">
         <title>Blog da Thaís Russo</title>
     </head>
-   <body>
-    <div class="page-header">
+   <body style="background-color: #e3e0f6;">
+    <div class="page-header text-center">
         {% if user.is_authenticated %}
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
         {% endif %}
@@ -16,7 +17,7 @@
     </div>
     <div class="content container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
             {% block content %}
             {% endblock %}
             </div>
